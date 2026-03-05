@@ -27,6 +27,15 @@ async function selectCategory(categoryId, btn) {
     });
     btn.classList.add("btn-pp");
     btn.classList.remove("btn-outline");
+
+    const res = await fetch(
+        `https://openapi.programming-hero.com/api/category/${categoryId}`,
+    );
+    const data = await res.json();
+    console.log(data);
+    displayTrees(data.plants);
+
+    hideLoading();
 };
 
 // loading spinner funtions
@@ -50,6 +59,8 @@ async function loadTress() {
 }
 
 function displayTrees(trees) {
+    treesContainer.innerHTML = "";
+    
     trees.forEach((tree) => {
         const card = document.createElement("div");
         card.className = "card bg-white shadow-sm";
@@ -74,5 +85,6 @@ function displayTrees(trees) {
         `;
         treesContainer.appendChild(card);
     });
+    hideLoading();
 };
 loadTress();
