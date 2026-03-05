@@ -15,30 +15,30 @@
 <body>
     <main class="container mx-auto">
         <h2 class="font-semibold text-3xl text-[#1F2937] text-center mt-5">Choose Your Trees</h2>
+        <div class="grid grid-cols-12 gap-8">
 
-        <div class="grid grid-cols-12 gap-8 text-center">
             <!-- categories -->
-             <div class="col-span-3 bg-white card card-body shadow-2xl">
+            <div class="col-span-3 bg-white card card-body shadow-2xl text-center">
                 <h2>Categories</h2>
                 <div>
                     <button id="all-trees-btn" class="btn btn-success mb-3">Success</button>
 
                     <!-- categories container -->
                     <div class="space-y-3" id="categories-container">
-                        
                     </div>
                 </div>
-             </div>
-             
-             <!-- trees -->
-              <div class="col-span-6">
-                Trees
-              </div>
+            </div>
 
-              <!-- cart -->
-               <div class="col-span-3">
+            <!-- trees -->
+            <div class="col-span-6">
+                <div id="tress-container" class="grid grid-cols-1 lg:grid-cols-3 gap-5">
+                </div>
+            </div>
+
+            <!-- cart -->
+            <div class="col-span-3">
                 cart
-               </div>
+            </div>
         </div>
     </main>
 
