@@ -1,5 +1,6 @@
 const categoriesContainer = document.getElementById("categories-container");
 const treesContainer = document.getElementById("tress-container");
+const loadingSpinner = document.getElementById("loading-spinner");
 
 // loadCategories function to display category buttons
 async function loadCategories() {
@@ -16,8 +17,13 @@ loadCategories();
 
 // displayTrees function to display all plants
 async function loadTress() {
+    loadingSpinner.classList.remove("hidden");
+    loadingSpinner.classList.add("flex");
+
     const res = await fetch("https://openapi.programming-hero.com/api/plants");
     const data = await res.json();
+
+    loadingSpinner.classList.add("hidden");
     displayTrees(data.plants);
 }
 
