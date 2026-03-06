@@ -43,7 +43,22 @@
 
                 <!-- cart -->
                 <div class="col-span-3">
-                    cart
+                    <h2 class="font-semibold text-xl">Cart</h2>
+                    <div class="space-y-4">
+                        <div id="cart-container" class="space-y-4">
+                        </div>
+
+                        <div id="empty-cart-container" class="text-center">
+                            <p>Your cart is empty</p>
+                            <p>Add trees to get started</p>
+                        </div>
+
+                        <!-- total amount -->
+                        <div class="flex justify-between items-center bg-green-50 rounded-lg p-4 my-3 font-bold">
+                            <span>Total</span>
+                            <span id="total-price">$0</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

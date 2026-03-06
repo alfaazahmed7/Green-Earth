@@ -8,6 +8,10 @@ const modalCategory = document.getElementById("modal-category");
 const modalDescription = document.getElementById("modal-description");
 const modalPrice = document.getElementById("modal-price");
 const modalTitle = document.getElementById("modal-title");
+const totalPrice = document.getElementById("total-price");
+const cartContainer = document.getElementById("cart-container");
+const emptyCartContainer = document.getElementById("empty-cart-container");
+let cart = [];
 
 // loadCategories function to display category buttons
 async function loadCategories() {
@@ -100,7 +104,7 @@ function displayTrees(trees) {
                             </div>
                             <div class="flex justify-between items-center">
                                 <h2 class="font-semibold text-xl text-[#4ade80]">$${tree.price}</h2>
-                                <button class="btn btn-primary">Buy Now</button>
+                                <button onclick = "addToCart(${tree.id}, '${tree.name}', '${tree.price}')" class="btn btn-primary">Cart</button>
                             </div>
                         </div>
         `;
@@ -108,6 +112,7 @@ function displayTrees(trees) {
     });
 };
 
+// cart modal
 async function openTreeModal(treeId) {
     const res = await fetch(`https://openapi.programming-hero.com/api/plant/${treeId}`);
     const data = await res.json();
@@ -120,3 +125,60 @@ async function openTreeModal(treeId) {
     treeDetailsModal.showModal();
 }
 loadTress();
+
+// add to cart functionality
+function addToCart(id, name, price) {
+    // console.log(id, name, price);
+    const existingItem = cart.find((item) => item.id === id);
+
+    // price = Number(price);
+
+    if (existingItem) {
+        existingItem.quantity += 1;
+    }
+    else {
+        cart.push({
+            id,
+            name,
+            price,
+            quantity: 1,
+        });
+    }
+    updateCart();
+};
+
+function updateCart() {
+    cartContainer.innerHTML = "";
+
+    if (cart.length === 0) {
+            emptyCartContainer.classList.remove("hidden");
+            totalPrice.textContent = `$${0}`;
+            return;
+        }
+        emptyCartContainer.classList.add("hidden");
+
+    let total = 0;
+    cart.forEach((item) => {
+        total += item.price * item.quantity;
+        const cartItem = document.createElement("div");
+        cartItem.className = "card card-body bg-slate-100";
+        cartItem.innerHTML = `
+        <div class="flex justify-between items-center">
+                                    <div>
+                                        <h2>${item.name}</h2>
+                                        <p>$${item.price} * ${item.quantity}</p>
+                                    </div>
+                                    <button onclick = "removeFromCart(${item.id})" class="btn btn-ghost">X</button>
+                                </div>
+                                <p class="text-right font-semibold text-xl">$${item.price * item.quantity}</p>
+        `;
+        cartContainer.appendChild(cartItem);
+    });
+    totalPrice.innerText = `$${total}`;
+};
+
+function removeFromCart(treeId) {
+    const updateCartElements = cart.filter((item) => item.id != treeId);
+    cart = updateCartElements;
+    updateCart();
+};
