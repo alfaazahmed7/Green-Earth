@@ -14,37 +14,78 @@
 
 <body>
     <main class="container mx-auto">
-        <h2 class="font-semibold text-3xl text-[#1F2937] text-center mt-5">Choose Your Trees</h2>
-        <div class="grid grid-cols-12 gap-8">
+        <section>
+            <h2 class="font-semibold text-3xl text-[#1F2937] text-center mt-5">Choose Your Trees</h2>
+            <div class="grid grid-cols-12 gap-8">
 
-            <!-- categories -->
-            <div class="col-span-3 bg-white card card-body shadow-2xl text-center">
-                <h2>Categories</h2>
-                <div>
-                    <button id="all-trees-btn" class="btn btn-success mb-3">Success</button>
+                <!-- categories -->
+                <div class="col-span-3 bg-white card card-body shadow-2xl text-center">
+                    <div class="sticky top-8">
+                        <h2 class="text-xl font-semibold mb-3">Categories</h2>
+                        <button id="all-trees-btn" class="btn btn-outline mb-3 w-full">All Trees</button>
 
-                    <!-- categories container -->
-                    <div class="space-y-3" id="categories-container">
+                        <!-- categories container -->
+                        <div class="space-y-3" id="categories-container">
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- trees -->
-            <div class="col-span-6">
-                <div id="tress-container" class="grid grid-cols-1 lg:grid-cols-3 gap-5">
+                <!-- trees -->
+                <div class="col-span-6">
+                    <div id="trees-container" class="grid grid-cols-1 lg:grid-cols-3 gap-5">
+                    </div>
+
+                    <!-- loading spinner -->
+                    <div id="loading-spinner" class="h-[60vh] hidden justify-center items-center">
+                        <span class="loading loading-dots loading-xl"></span>
+                    </div>
                 </div>
 
-                <!-- loading spinner -->
-                 <div id="loading-spinner" class="h-[60vh] hidden justify-center items-center">
-                    <span class="loading loading-dots loading-xl"></span>
-                 </div>
+                <!-- cart -->
+                <div class="col-span-3">
+                    cart
+                </div>
             </div>
+        </section>
 
-            <!-- cart -->
-            <div class="col-span-3">
-                cart
-            </div>
-        </div>
+        <!-- Product details modal -->
+        <section>
+            <dialog id="tree-details-modal" class="modal">
+                <div class="modal-box">
+
+                    <!-- Modal Header with Close Button -->
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="font-bold text-2xl text-green-700" id="modal-title">Tree Details</h3>
+                        <button class="btn btn-sm btn-circle btn-ghost"
+                            onclick="document.getElementById('tree-details-modal').close()">✕</button>
+                    </div>
+
+                    <!-- Plant Details -->
+                    <div class=" gap-6">
+                        <img id="modal-image" src="" alt="plant"
+                            class="w-full !h-[250px] object-cover rounded-lg mb-12">
+                        <div class="">
+                            <p class="text-sm text-gray-500 mb-2">
+                                <span class="font-bold">Category:</span>
+                                <span id="modal-category" class="badge badge-primary"></span>
+                            </p>
+                            <p class="text-sm text-gray-600 mb-4">
+                                <span id="modal-description"></span>
+                            </p>
+                            <div class="flex items-baseline gap-2 mb-6">
+                                <span class="text-3xl font-bold text-green-600">$<span id="modal-price">0</span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <!-- if there is a button in form, it will close the modal -->
+                            <button class="btn">Close</button>
+                        </form>
+                    </div>
+                </div>
+            </dialog>
+        </section>
     </main>
 
     <script src="./script/script.js"></script>
