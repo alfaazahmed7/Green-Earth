@@ -100,7 +100,7 @@ function displayTrees(trees) {
                             <p class="text-[12px] text-[#1F2937] line-clamp-2">${tree.description}
                             </p>
                             <div class="">
-                                <p class="text-[#15803D] text-sm font-medium bg-[#DCFCE7] p-1 rounded-xl w-[50%] text-center">${tree.category}</p>
+                                <p class="text-[#15803D] text-sm font-medium bg-[#DCFCE7] p-1 rounded-xl w-[60%] text-center">${tree.category}</p>
                             </div>
                             <div class="flex justify-between items-center">
                                 <h2 class="font-semibold text-xl text-[#4ade80]">$${tree.price}</h2>
