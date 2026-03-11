@@ -161,7 +161,7 @@ function updateCart() {
     cart.forEach((item) => {
         total += item.price * item.quantity;
         const cartItem = document.createElement("div");
-        cartItem.className = "card card-body bg-slate-100";
+        cartItem.className = "card card-body bg-white";
         cartItem.innerHTML = `
         <div class="flex justify-between items-center">
                                     <div>

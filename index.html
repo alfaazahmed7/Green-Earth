@@ -38,7 +38,9 @@
                     </ul>
                 </div>
                 <div class="navbar-end">
-                    <button class="btn bg-[#FACC15] text-[#15803D] text-base font-medium rounded-full border-none border-2">Plant a
+                    <button
+                        class="btn bg-[#FACC15] text-[#15803D] text-base font-medium rounded-full border-none border-2">Plant
+                        a
                         Tree</button>
                 </div>
             </div>
@@ -47,70 +49,24 @@
         <!-- Hero Section -->
         <section class="bg-[#CFF0DC]">
             <div class="grid grid-cols-3 justify-center items-center">
-            <div>
-                <img src="./assets/hero-leaf1.png" alt="">
-            </div>
-            <div class="text-center">
-                <h2 class="text-[#1F2937] font-bold text-5xl mb-3">Plant a Tree, Grow a Future</h2>
-                <p class="text-[#1F2937] text-base mb-6">Join our mission to plant 1 million trees and make the Earth greener for future
-                    generations.</p>
+                <div>
+                    <img src="./assets/hero-leaf1.png" alt="">
+                </div>
+                <div class="text-center">
+                    <h2 class="text-[#1F2937] font-bold text-5xl mb-3">Plant a Tree, Grow a Future</h2>
+                    <p class="text-[#1F2937] text-base mb-6">Join our mission to plant 1 million trees and make the
+                        Earth greener for future
+                        generations.</p>
                     <button class="btn rounded-full bg-[#FACC15] text-base font font-medium">Get Involved</button>
-            </div>
-            <div>
-                <img src="./assets/hero-leaf2.png" alt="">
-            </div>
-        </div>
-        </section>
-
-        <!-- Main Section -->
-        <section class="w-11/12 mx-auto">
-            <h2 class="font-semibold text-3xl text-[#1F2937] text-center py-10">Choose Your Trees</h2>
-            <div class="grid grid-cols-12 gap-8">
-
-                <!-- categories -->
-                <div class="col-span-3 card card-body text-center">
-                    <div class="sticky top-8">
-                        <h2 class="text-xl font-semibold mb-3">Categories</h2>
-                        <button id="all-trees-btn" class="btn btn-outline mb-3 w-full">All Trees</button>
-
-                        <!-- categories container -->
-                        <div class="space-y-3" id="categories-container">
-                        </div>
-                    </div>
                 </div>
-
-                <!-- trees -->
-                <div class="col-span-6">
-                    <div id="trees-container" class="grid grid-cols-1 lg:grid-cols-3 gap-5">
-                    </div>
-
-                    <!-- loading spinner -->
-                    <div id="loading-spinner" class="h-[60vh] hidden justify-center items-center">
-                        <span class="loading loading-dots loading-xl"></span>
-                    </div>
-                </div>
-
-                <!-- cart -->
-                <div class="col-span-3">
-                    <h2 class="font-semibold text-xl">Cart</h2>
-                    <div class="space-y-4">
-                        <div id="cart-container" class="space-y-4">
-                        </div>
-
-                        <div id="empty-cart-container" class="text-center">
-                            <p>Your cart is empty</p>
-                            <p>Add trees to get started</p>
-                        </div>
-
-                        <!-- total amount -->
-                        <div class="flex justify-between items-center bg-white rounded-lg p-4 my-3 font-bold">
-                            <span>Total</span>
-                            <span id="total-price">$0</span>
-                        </div>
-                    </div>
+                <div>
+                    <img src="./assets/hero-leaf2.png" alt="">
                 </div>
             </div>
         </section>
+
+        <!-- Cart Section -->
+
 
         <!-- Product Details Modal -->
         <section class="w-11/12 mx-auto">
@@ -149,6 +105,27 @@
                     </div>
                 </div>
             </dialog>
+        </section>
+
+        <!-- About Campaign Section -->
+        <section class="w-11/12 mx-auto mt-[100px]">
+            <h2 class="text-[#1F2937] text-3xl font-semibold text-center mb-10">About the Campaign</h2>
+            <div class="grid grid-cols-2 gap-4 justify-between items-center max-w-[1090px] mx-auto">
+                <div>
+                    <img src="./assets/about.png" alt="">
+                </div>
+                <div>
+                    <p class="text-[#1F2937] text-base mb-5">Green Earth is a global tree plantation initiative dedicated to
+                        fighting climate change. Since our start, we’ve planted over 500,000 trees worldwide. By joining
+                        our campaign, you help restore forests, create habitats for wildlife, and combat global warming.
+                    </p>
+                    <div class="ml-4">
+                        <li class="text-[#1F2937] text-base">Restoration of natural habitats</li>
+                        <li class="text-[#1F2937] text-base">Improvement of air quality</li>
+                        <li class="text-[#1F2937] text-base">Support for local communities</li>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 
