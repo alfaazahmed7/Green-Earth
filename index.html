@@ -19,9 +19,32 @@
         rel="stylesheet">
 </head>
 
-<body  class="bg-green-50">
-    <main class="container mx-auto inter-font">
-        <section>
+<body class="bg-green-50">
+    <main class=" inter-font">
+
+        <!-- Navbar -->
+        <section class="bg-[#15803D]">
+            <div class="navbar w-11/12 mx-auto">
+                <div class="navbar-start">
+                    <a class="text-2xl text-white font-bold">Green Earth</a>
+                </div>
+                <div class="navbar-center">
+                    <ul class="menu menu-horizontal px-1">
+                        <li><a class="text-base font-medium text-white">About</a></li>
+                        <li>
+                            <a class="text-base font-medium text-white">Gallery</a>
+                        </li>
+                        <li><a class="text-base font-medium text-white">Plant a Tree</a></li>
+                    </ul>
+                </div>
+                <div class="navbar-end">
+                    <a class="btn bg-[#FACC15] text-[#15803D] text-base font-medium rounded-full border-none">Plant a Tree</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Section -->
+        <section class="w-11/12 mx-auto">
             <h2 class="font-semibold text-3xl text-[#1F2937] text-center py-10">Choose Your Trees</h2>
             <div class="grid grid-cols-12 gap-8">
 
@@ -70,8 +93,8 @@
             </div>
         </section>
 
-        <!-- Product details modal -->
-        <section>
+        <!-- Product Details Modal -->
+        <section class="w-11/12 mx-auto">
             <dialog id="tree-details-modal" class="modal">
                 <div class="modal-box">
 
